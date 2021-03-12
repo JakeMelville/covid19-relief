@@ -1,0 +1,21 @@
+{
+  "name": "covid19-relief",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JakeMelville/covid19-relief.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JakeMelville/covid19-relief/issues"
+  },
+  "homepage": "https://github.com/JakeMelville/covid19-relief#readme"
+}
