@@ -7,9 +7,12 @@ const queryString = apiUrl + apiKey + '&location=' + locationInput;
 fetch(queryString)
 .then((res) => res.json())
 .then((data) => {
-    console.log(data.results[0].locations[0].latLng.lat)
-    console.log(data.results[0].locations[0].latLng.lng)
-    document.querySelector('body').textContent = data;
+    console.log(data.results[0].locations[0].latLng.lat);
+    const locationLat = data.results[0].locations[0].latLng.lat;
+    
+    console.log(data.results[0].locations[0].latLng.lng);
+    const locationLng = data.results[0].locations[0].latLng.lng;
+    // document.querySelector('body').textContent = data;
 })
 
 console.log(queryString);
