@@ -37,3 +37,7 @@ body {
     background-color: #ddd;
     color: black;
 }
+.location-results {
+    display:none;
+    list-style: none;
+}
