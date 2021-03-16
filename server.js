@@ -8,6 +8,11 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+//set up sessions
+const sess = {
+  secret:
+}
+
 // turn on routes
 app.use(routes);
 
