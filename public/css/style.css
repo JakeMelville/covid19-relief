@@ -30,11 +30,6 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-/* body {
-    background-image: url("https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/article_thumbnails/other/1800x1200_virus_3d_render_red_03_other.jpg");
-    opacity: .7;
-
-} */
 
 /*Header*/
 header {
@@ -75,6 +70,7 @@ nav ul li {
     list-style: none;
     display: inline-block;
 }
+
 #resultsLocations {
     list-style-type: none;
     font-weight: bold;
