@@ -1,9 +1,8 @@
 const express = require('express');
-const path = require('path');
+const routes = require('./contollers');
+const sequelize = require('./config/connection');
+
 const session = require('express-session');
-const routes = require('../covid19-relief/controllers');
-const sequelize = require('../covid19-relief/config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -24,6 +23,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+//set up sessions
+const sess = {
+  secret: 'covid info',
+  resave: false,
+  saveUninitialized: false
+};
+
+app.use(session(sess));
+
+// turn on routes
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {

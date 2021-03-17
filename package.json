@@ -10,6 +10,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+<<<<<<< HEAD
   "dependencies": {
     "bcrypt": "5.0.1",
     "connect-session-sequelize": "7.1.1",
@@ -17,6 +18,16 @@
     "express": "^4.17.1",
     "express-session": "1.17.1",
     "inquirer": "^8.0.0",
+=======
+  "bugs": {
+    "url": "https://github.com/JakeMelville/covid19-relief/issues"
+  },
+  "homepage": "https://github.com/JakeMelville/covid19-relief#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+>>>>>>> 522b65f58e68181f3ae251ed4ac44d59bec17c22
     "mysql2": "^2.2.5",
     "sequelize": "^6.5.1"
   }
