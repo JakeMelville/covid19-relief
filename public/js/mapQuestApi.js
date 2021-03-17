@@ -8,10 +8,7 @@ const mapUrl = 'https://open.mapquestapi.com/staticmap/v5/map?key=';
 // const stillMap = mapUrl + apiKey + '&banner=Covid+Test+Sights-NJ Area|top&center=trenton,nj&size=400,600&zoom=8&locations=40.1207,-74.28952||40.15256,-74.2291||40.00803,-74.16623||40.05976,-74.14184||40.21875,-74.62248||40.33375,-74.24208||40.14269,-74.22684||40.33969,-74.62722||40.21219,-74.01481||40.18867,-74.87824||40.05189,-74.90877||40.24199,-74.30546||40.44053,-74.50541||40.50674,-74.39655||39.9992,-74.98635||40.08692,-75.02265||40.5556,-74.34595||40.05008,-74.1197||39.993,-75.09644||40.11905,-75.11935||40.30472,-75.14384||39.75012,-75.12785||39.92332,-75.2378||40.7007,-74.19956||40.67848,-74.2343||40.6855,-74.10021||40.709,-74.19768||40.75671,-74.16836||40.25877,-75.2662||40.7426,-74.19172||40.72386,-73.99828||40.72767,-73.95315||39.43744,-75.04009||40.73809,-74.03504||40.74511,-73.8856||40.85331,-74.17292';
 // const mapString = mapUrl + apiKey + '&locations=40.1207,-74.28952||40.15256,-74.2291||40.00803,-74.16623||40.05976,-74.14184||40.21875,-74.62248||40.33375,-74.24208||40.14269,-74.22684||40.33969,-74.62722||40.21219,-74.01481||40.18867,-74.87824||40.05189,-74.90877||40.24199,-74.30546||40.44053,-74.50541||40.50674,-74.39655||39.9992,-74.98635||40.08692,-75.02265||40.5556,-74.34595||40.05008,-74.1197||39.993,-75.09644||40.11905,-75.11935||40.30472,-75.14384||39.75012,-75.12785||39.92332,-75.2378||40.7007,-74.19956||40.67848,-74.2343||40.6855,-74.10021||40.709,-74.19768||40.75671,-74.16836||40.25877,-75.2662||40.7426,-74.19172||40.72386,-73.99828||40.72767,-73.95315||39.43744,-75.04009||40.73809,-74.03504||40.74511,-73.8856||40.85331,-74.17292';
 
-// const img = document.createElement('img')
-// img.src = stillMap;
-// var src = document.getElementById('map');
-// src.appendChild(img);
+
 
 function locFinder(event) {
     event.preventDefault();
@@ -46,6 +43,11 @@ function locFinder(event) {
                     var res5 = document.getElementById("result-5");
                     res5.textContent = nearLocations.items[4].address.label;
 
+                    const stillMap = mapUrl + apiKey + `&banner=Covid+Test+Sights-NJ Area|top&size=400,400&zoom=10&locations=${nearLocations.items[0].position.lat},${nearLocations.items[0].position.lng}|marker-1||${nearLocations.items[1].position.lat},${nearLocations.items[1].position.lng}|marker-2||${nearLocations.items[2].position.lat},${nearLocations.items[2].position.lng}|marker-3||${nearLocations.items[3].position.lat},${nearLocations.items[3].position.lng}|marker-4||${nearLocations.items[4].position.lat},${nearLocations.items[4].position.lng}|marker-5`
+                    const img = document.createElement('img')
+                    img.src = stillMap;
+                    var src = document.getElementById('map');
+                    src.appendChild(img);
 
                 });
         });
