@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,6 +15,7 @@
 
 
 <body>
+
     <body>
         <header>
             <h1><b>COVID-19 Relief</b></h1>
@@ -34,28 +36,36 @@
                 </li>
             </ul>
         </nav>
-    <main>
-        <div class="container">
-            <div class="row">
-              <div class="col-lg" id="test-locations">
-                <div id="map"></div>
-                    <form>
-                        <input id="input" type="text" placeholder="City, State">
-                        <button class='btn-primary' type="submit">Submit</button>
-                    </form>
-              </div>
-              <div class="col-lg">
-                <a img src="https://directorsblog.nih.gov/wp-content/uploads/2020/07/COVID-19-Card-24.jpg" href="https://g.co/kgs/KWnkMR" target="_blank">COVID-19 Statics</a>
-              </div>
-          </div>
-          <div class="row">
-          <div class="col-lg" id="vaccine-finder">
-            <iframe src="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-finder-widget.html" scrolling="no" height="400" frameborder="0" width="280" title="Vaccine Finder Widget" style="overflow: hidden; frameborder="0"></textarea><!–- Vaccine Finder Widget–-!></textarea></iframe>
-          </div>
-        </div>
-        </div>
-    </main>
-    <script src="./js/mapQuestApi.js"></script>
-</body>
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg" id="covid-updates">
+                        <p class="text-center">Click on image for NJ COVID-19 updates.</p>
+                        <a href="https://www.nytimes.com/interactive/2020/us/new-jersey-coronavirus-cases.html"target="_blank"><img
+                                src="https://directorsblog.nih.gov/wp-content/uploads/2020/07/COVID-19-Card-24.jpg"
+                                class="rounded mx-auto d-block"></a>
+                    </div>
+                    <div class="col-lg" id="test-locations">
+                        <div id="map"></div>
+                        <form>
+                            <input id="input" type="text" placeholder="City, State">
+                            <button class='btn-primary' type="submit">Submit</button>
+                        </form>
+                    </div>
 
-</html> 
+                </div>
+                <div class="row">
+                    <div class="col-lg" id="vaccine-finder">
+                        <iframe src="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-finder-widget.html"
+                            scrolling="no" height="400" frameborder="0" width="280" title="Vaccine Finder Widget"
+                            style="overflow: hidden; frameborder=" 0"></textarea>
+                            <!–- Vaccine Finder Widget–-!></textarea>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script src="./js/mapQuestApi.js"></script>
+    </body>
+
+</html>
