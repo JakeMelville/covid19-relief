@@ -43,7 +43,7 @@ function locFinder(event) {
                     var res5 = document.getElementById("result-5");
                     res5.textContent = "5: " + nearLocations.items[4].address.label;
 
-                    const stillMap = mapUrl + apiKey + `&banner=Covid+Test+Sights-NJ Area|top&size=400,400&zoom=10&locations=${nearLocations.items[0].position.lat},${nearLocations.items[0].position.lng}|marker-1||${nearLocations.items[1].position.lat},${nearLocations.items[1].position.lng}|marker-2||${nearLocations.items[2].position.lat},${nearLocations.items[2].position.lng}|marker-3||${nearLocations.items[3].position.lat},${nearLocations.items[3].position.lng}|marker-4||${nearLocations.items[4].position.lat},${nearLocations.items[4].position.lng}|marker-5`
+                    const stillMap = mapUrl + apiKey + `&banner=Covid+19+Test+Sights|top&size=400,400&zoom=10&locations=${nearLocations.items[0].position.lat},${nearLocations.items[0].position.lng}|marker-1||${nearLocations.items[1].position.lat},${nearLocations.items[1].position.lng}|marker-2||${nearLocations.items[2].position.lat},${nearLocations.items[2].position.lng}|marker-3||${nearLocations.items[3].position.lat},${nearLocations.items[3].position.lng}|marker-4||${nearLocations.items[4].position.lat},${nearLocations.items[4].position.lng}|marker-5`
                     const img = document.createElement('img')
                     img.src = stillMap;
                     var src = document.getElementById('map');
