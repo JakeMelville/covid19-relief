@@ -23,7 +23,7 @@ Patient.init(
                 isEmail: true
             }
         },
-        cellPhone: {
+        cell_phone: {
             type: DataTypes.INTEGER,
             allowNull: false,
             unique: true
