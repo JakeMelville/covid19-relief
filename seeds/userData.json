@@ -1,14 +1,17 @@
 [
     {
-      "name": "dantanner",
-      "password": "password123"
+        "name": "Tanner",
+        "email": "tanner@gamil.com",
+        "password": "password123"
     },
     {
-      "name": "leonardo785",
-      "password": "password456"
+        "name": "Tony",
+        "email": "treeder@yahoo.com",
+        "password": "password456"
     },
     {
-      "name": "sarahdean34",
-      "password": "password1425"
+        "name": "Grey",
+        "email": "mergrey@gamil.com",
+        "password": "password789"
     }
-  ]
+]
