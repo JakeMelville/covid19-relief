@@ -50,3 +50,6 @@ nav ul li {
     list-style: none;
     display: inline-block;
 }
+#results {
+    list-style-type: none;
+}
