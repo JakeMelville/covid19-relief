@@ -72,3 +72,6 @@ nav ul li {
     list-style: none;
     display: inline-block;
 }
+#resultsLocations {
+    list-style-type: none;
+}
