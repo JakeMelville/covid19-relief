@@ -12,7 +12,7 @@ sequelize.sync().then(()=> {
   console.log("Working DB ")
   app.listen(PORT, () => console.log('Now listening'));
 }).catch((err)=> {
-  console.log(err,  " Something is not rihght here ")
+  console.log(err,  " Something is not right here ")
 })
 // turn on routes
 app.use(routes);
