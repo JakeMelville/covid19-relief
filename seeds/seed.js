@@ -7,7 +7,7 @@ const locationSeedData = require('./locationSeedData.json');
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
-  const patients = await Patient.bulkCreate(travellerSeedData);
+  const patients = await Patient.bulkCreate(patientSeedData);
 
   const locations = await Location.bulkCreate(locationSeedData);
 }
