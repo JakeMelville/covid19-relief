@@ -5,8 +5,30 @@
     
 }
 
+<<<<<<< HEAD
+.img {
+    height: 100px;
+    width: 200px;
+    position: relative;
+    background-position: center;
+    flex: 1 0 auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bg-img {
+    min-height: 380px;
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+=======
 body {
     background-image: url("https://www.paho.org/sites/default/files/card/2021-03/covid-19-virus-aqua-bk.jpg");
+>>>>>>> 522b65f58e68181f3ae251ed4ac44d59bec17c22
 
 }
 

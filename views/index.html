@@ -9,7 +9,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="../public/css/style.css" />
 
 </head>
 
@@ -23,10 +23,10 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#login">Log In</a>
+                    <a href="login.html">Log In</a>
                 </li>
                 <li>
-                    <a href="#signup">Sign Up</a>
+                    <a href="signup.html">Sign Up</a>
                 </li>
                 <li>
                     <a href="#test-locations">Test Locations</a>
@@ -36,6 +36,7 @@
                 </li>
             </ul>
         </nav>
+<<<<<<< HEAD:public/index.html
         <main>
             <div class="container">
                 <div class="row">
@@ -67,5 +68,30 @@
         </main>
         <script src="./js/mapQuestApi.js"></script>
     </body>
+=======
+    <main>
+        <div class="container">
+            <div class="row">
+              <div class="col-lg" id="test-locations">
+                <div id="map"></div>
+                    <form>
+                        <input id="input" type="text" placeholder="City, State">
+                        <button class='btn-primary' type="submit">Submit</button>
+                    </form>
+              </div>
+              <div class="col-lg">
+                <a href="https://g.co/kgs/KWnkMR" target="_blank">COVID-19 Statics</a>
+              </div>
+          </div>
+          <div class="row">
+          <div class="col-lg" id="vaccine-finder">
+            <iframe src="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-finder-widget.html" scrolling="no" height="400" frameborder="0" width="280" title="Vaccine Finder Widget" style="overflow: hidden; frameborder="0"></textarea><!–- Vaccine Finder Widget–-!></textarea></iframe>
+          </div>
+        </div>
+        </div>
+    </main>
+    <script src="../public/js/mapQuestApi.js"></script>
+</body>
+>>>>>>> 798efe79d523a1faefaba57e670a8442a3f2fbba:views/index.html
 
 </html>
