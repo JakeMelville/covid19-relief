@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COVID Relief</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css" />
+
+</head>
+
+
+<body>
+
+    <body>
+        <header>
+            <h1><b>COVID-19 Relief</b></h1>
+        </header>
+        <nav class="container">
+            <ul class="row w-100">
+                <li class="col">
+                    <a href="#login">Log In</a>
+                </li>
+                <li class="col">
+                    <a href="#signup">Sign Up</a>
+                </li>
+                <li class="col">
+                    <a href="#test-locations">Test Locations</a>
+                </li>
+                <li class="col">
+                    <a href="#vaccine-finder">Vaccine Finder</a>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <div class="container w-100">
+                <div class="row w-100">
+                    <div class="col" id="test-locations">
+                        <ul id="results">
+                            <li id="result-1"></li>
+                            <li id="result-2"></li>
+                            <li id="result-3"></li>
+                            <li id="result-4"></li>
+                            <li id="result-5"></li>
+                        </ul>
+                    </div>
+                    <div class="col" id="map"></div>
+                    <form>
+                        <input id="input" type="text" placeholder="City, State">
+                        <button id="submitBtn" class='btn-primary' type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <a href="https://g.co/kgs/KWnkMR" target="_blank">COVID-19 Statics</a>
+            </div>
+
+            <!-- <div class="row">
+                <div class="col-12" id="vaccine-finder">
+                    <iframe src="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-finder-widget.html"
+                        scrolling="no" height="400" frameborder="0" width="280" title="Vaccine Finder Widget"
+                        style="overflow: hidden; frameborder=" 0"></textarea>
+                        <!–- Vaccine Finder Widget–-!></textarea>
+                    </iframe>
+                </div>
+            </div> -->
+
+        </main>
+        <script src="./js/mapQuestApi.js"></script>
+    </body>
+
+</html>
