@@ -13,32 +13,39 @@
 
 </head>
 
-
 <body>
-
-    <body>
+    <div id="backgroundImg">
         <header>
-            <h1><b>COVID-19 Relief</b></h1>
+            <h1 class><b>COVID-19 Relief</b></h1>
         </header>
-        <nav>
-            <ul>
-                <li>
+        <nav class="container">
+            <ul class="row">
+                <li class="col text-center">
                     <a href="login.html">Log In</a>
                 </li>
-                <li>
+                <li class="col text-center">
                     <a href="signup.html">Sign Up</a>
                 </li>
-                <li>
+                <li class="col text-center">
                     <a href="#test-locations">Test Locations</a>
                 </li>
-                <li>
+                <li class="col text-center">
                     <a href="#vaccine-finder">Vaccine Finder</a>
+                </li>
+                <li class="col text-center">
+                    <a href="#my-profile">My Profile</a>
+
                 </li>
             </ul>
         </nav>
         <main>
             <div class="container">
                 <div class="row">
+                    <h2 class="col-12 text-center">Find Testing Centers Near You</h2>
+                    <form class="col-12 text-center">
+                        <input id="input" type="text" placeholder="City, State">
+                        <button id="submitBtn" class='btn-primary' type="submit">Submit</button>
+                    </form>
                     <div class="col" id="test-locations">
                         <ul id="resultsLocations">
                             <li id="result-1"></li>
@@ -49,10 +56,7 @@
                         </ul>
                     </div>
                     <div class="col" id="map"></div>
-                    <form>
-                        <input id="input" type="text" placeholder="City, State">
-                        <button id="submitBtn" class='btn-primary' type="submit">Submit</button>
-                    </form>
+
                 </div>
             </div>
             <div class="row">
@@ -60,7 +64,8 @@
                     <a href="https://g.co/kgs/KWnkMR" target="_blank">COVID-19 Statics</a>
 
                 </div>
-                <div class="col-lg" id="vaccine-finder">
+                <div class="bingwidget" data-type="covid19" data-market="en-us" data-language="en-us" data-app="bingwidget"></div>
+                <div class="col-6 text-center" id="vaccine-finder">
                     <iframe src="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-finder-widget.html"
                         scrolling="no" height="400" frameborder="0" width="280" title="Vaccine Finder Widget"
                         style="overflow: hidden" ; frameborder="0"></textarea>
@@ -68,9 +73,12 @@
                     </iframe>
                 </div>
             </div>
-            </div>
+
         </main>
-        <script src="../public/js/mapQuestApi.js"></script>
-    </body>
+    </div>
+    
+    <script src="../public/js/mapQuestApi.js"></script>
+    
+</body>
 
 </html>
