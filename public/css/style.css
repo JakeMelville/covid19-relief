@@ -1,39 +1,52 @@
+* {
+    box-sizing: border-box;
+    padding: 10px;
+    margin: 10px;
+    
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    font-size: 100%;
+    background-image: url("https://www.paho.org/sites/default/files/card/2021-03/covid-19-virus-aqua-bk.jpg");
+
 }
 
-.bg-img {
-    background-image: url("./images/covid-3.jpg");
-    min-height: 380px;
-    position: relative;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.container {
-    margin: 20px;
-    width: auto;
-    position: absolute;
-}
-
-.topnav {
-    overflow: hidden;
-    background-color: #333;
-}
-
-.topnav a {
-    float: left;
-    text-align: center;
-    padding: 14px 16px;
-    color: #f2f2f2;
-    text-decoration: none;
-    font-size: 17px;
-}
-
-.topnav a:hover {
-    background-color: #ddd;
+/*Header*/
+header {
+    font-size: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: black;
+    text-align: center;
+    justify-content:space-between;
+    height: 150px;
+    width: 98%;
+}
+/*Navigation Bar*/
+nav ul{
+    background-color: aqua;
+    padding: 2px;
+    text-align: right;
+    border-style: solid;
+}
+
+nav a {
+    display: block;
+    color:black;
+    padding: 2px;
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.vaccine-finder {
+    align-items: center;
+}
+
+nav a:hover {
+    background-color: white;
+    color:grey;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
 }
