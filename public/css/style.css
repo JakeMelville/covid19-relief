@@ -1,10 +1,16 @@
 * {
     box-sizing: border-box;
-    padding: 10px;
-    margin: 10px;
+    /* padding: 10px;
+    margin: 10px; */
     
 }
-
+#backgroundImg {
+    background-image: url("../images/covid-19-image.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .img {
     height: 100px;
     width: 200px;
@@ -24,10 +30,6 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-body {
-    background-image: url("https://www.paho.org/sites/default/files/card/2021-03/covid-19-virus-aqua-bk.jpg");
-
-}
 
 /*Header*/
 header {
@@ -36,12 +38,11 @@ header {
     color: black;
     text-align: center;
     justify-content:space-between;
-    height: 150px;
     width: 98%;
 }
 /*Navigation Bar*/
 nav ul{
-    background-color: aqua;
+    background-color: white;
     padding: 2px;
     text-align: right;
     border-style: solid;
@@ -72,4 +73,5 @@ nav ul li {
 
 #resultsLocations {
     list-style-type: none;
+    font-weight: bold;
 }

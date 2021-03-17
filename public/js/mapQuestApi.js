@@ -12,6 +12,7 @@ const mapUrl = 'https://open.mapquestapi.com/staticmap/v5/map?key=';
 
 function locFinder(event) {
     event.preventDefault();
+    document.getElementById("test-locations").removeAttribute('display')
     const queryString = apiUrl + apiKey + '&location=' + locationInput.value.replace(/\s+/g, '').toLowerCase();
     console.log(queryString)
     fetch(queryString)
