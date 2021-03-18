@@ -55,3 +55,11 @@ function locFinder(event) {
 }
 
 document.getElementById('submitBtn').addEventListener("click", locFinder)
+function showTest() {
+    console.log("show")
+    document.getElementById("covid-updates").style.visibility = "hidden"; 
+    document.getElementById("test-locations").style.visibility = "visible"; 
+  }
+  
+  //function showElem() {
+    //document.getElementById("myImg").style.visibility = "visible"; 

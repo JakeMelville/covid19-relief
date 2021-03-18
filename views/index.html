@@ -27,7 +27,7 @@
                     <a href="signup.html">Sign Up</a>
                 </li>
                 <li class="col text-center">
-                    <a href="#test-locations">Test Locations</a>
+                    <a href="#test-locations" onclick="showTest()">Test Locations</a>
                 </li>
                 <li class="col text-center">
                     <a href="#vaccine-finder">Vaccine Finder</a>
@@ -49,22 +49,22 @@
                                 class="rounded mx-auto d-block"></a>
                     </div>
                 </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg " id="vaccine-finder">
-                            <iframe src="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-finder-widget.html"
-                                scrolling="no" height="400" frameborder="0" width="280" title="Vaccine Finder Widget"
-                                style="overflow: hidden" frameborder="0"></textarea>
-                                <!–- Vaccine Finder Widget–-!></textarea>
-                            </iframe>
-                        </div>
+            </div>
+            <div class="invisible" id="vaccine-finder">
+                <div class="row">
+                    <div class="col-lg" >
+                        <iframe src="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-finder-widget.html"
+                            scrolling="no" height="400" frameborder="0" width="300" title="Vaccine Finder Widget"
+                            style="overflow: hidden" frameborder="0"></textarea>
+                            <!–- Vaccine Finder Widget–-!></textarea>
+                        </iframe>
                     </div>
                 </div>
             </div>
 
-            <div class="container">
+            <div class="invisible" id="test-locations">
                 <div class="row">
-                    <div class="col-lg" id="test-locations">
+                    <div class="col-lg" >
                         <div id="map"></div>
 
                         <div class="container">

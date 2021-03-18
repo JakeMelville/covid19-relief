@@ -67,7 +67,7 @@ iframe {
 }
 
 nav a:hover {
-    background-color: white;
+    background-color: aquamarine;
     color:grey;
 }
 
@@ -81,3 +81,19 @@ nav ul li {
     font-weight: bold;
 }
 
+.vaccine-finder.hidden {
+    visibility: hidden;
+    display: none;
+    align-items: center;
+    align-content: center;
+}
+.test-locations.hidden {
+    display: none;
+    visibility: hidden;
+}
+iframe {
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
