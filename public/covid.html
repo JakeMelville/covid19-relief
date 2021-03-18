@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>COVID Relief</title>
+    <title>COVID-19 Relief</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -13,32 +13,40 @@
 
 </head>
 
-
 <body>
+<<<<<<< HEAD:public/covid.html
 
     <body>
+=======
+    <div id="backgroundImg">
+>>>>>>> 6a84a4d67b64c6dcc2f460cd33736a029abd03d6:views/index.html
         <header>
-            <h1><b>COVID-19 Relief</b></h1>
+            <h1 class><b>COVID-19 Relief</b></h1>
         </header>
-        <nav>
-            <ul>
-                <li>
+        <nav class="container">
+            <ul class="row">
+                <li class="col text-center">
                     <a href="login.html">Log In</a>
                 </li>
-                <li>
+                <li class="col text-center">
                     <a href="signup.html">Sign Up</a>
                 </li>
-                <li>
+                <li class="col text-center">
                     <a href="#test-locations">Test Locations</a>
                 </li>
-                <li>
+                <li class="col text-center">
                     <a href="#vaccine-finder">Vaccine Finder</a>
+                </li>
+                <li class="col text-center">
+                    <a href="./myProfile.html">My Profile</a>
+
                 </li>
             </ul>
         </nav>
         <main>
             <div class="container">
                 <div class="row">
+<<<<<<< HEAD:public/covid.html
                     <div class="col" id="test-locations">
                         <ul id="resultsLocations">
                             <li id="result-1"></li>
@@ -67,6 +75,52 @@
         </div>
     </main>
     <script src="/js/mapQuestApi.js"></script>
+=======
+                    <div class="col-12" id="covid-updates">
+                        <p class="text-center">Click on image for NJ COVID-19 updates.</p>
+                        <a href="https://www.nytimes.com/interactive/2020/us/new-jersey-coronavirus-cases.html"
+                            target="_blank"><img
+                                src="https://directorsblog.nih.gov/wp-content/uploads/2020/07/COVID-19-Card-24.jpg"
+                                class="rounded mx-auto d-block"></a>
+                    </div>
+
+                    <h2 class="col-12 text-center mt-5">Find Testing Centers Near You</h2>
+                    <form class="col-12 text-center">
+                        <input id="input" type="text" placeholder="City, State">
+                        <button id="submitBtn" class='btn-primary' type="submit">Submit</button>
+                    </form>
+                    <div class="col" id="test-locations">
+                        <ul id="resultsLocations">
+                            <li class="mb-2" id="result-1"></li>
+                            <li class="mb-2" id="result-2"></li>
+                            <li class="mb-2" id="result-3"></li>
+                            <li class="mb-2" id="result-4"></li>
+                            <li class="mb-2" id="result-5"></li>
+                        </ul>
+                      </div>
+                      <div class="col" id="map"></div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mt-5" id="vaccine-finder">
+                        <iframe src="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-finder-widget.html"
+                            scrolling="no" height="400" frameborder="0" width="280" title="Vaccine Finder Widget"
+                            style="overflow: hidden" ; frameborder="0"></textarea>
+                            <!–- Vaccine Finder Widget–-!></textarea>
+                        </iframe>
+                    </div>
+
+                </div>
+            </div>
+  </main>
+    </div>
+    <script src="../public/js/apiKeys.js"></script>
+    <script src="../public/js/mapQuestApi.js"></script>
+
+
+>>>>>>> 6a84a4d67b64c6dcc2f460cd33736a029abd03d6:views/index.html
 </body>
 =======
                 </div>
