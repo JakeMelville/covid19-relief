@@ -24,7 +24,7 @@ Patient.init(
             }
         },
         cell_phone: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
             unique: true
         },
