@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { Patient } = require('../../models');
 
 router.post('/', async (req, res) => {
     try {
-        const patientData = await User.create(req.body);
+        const patientData = await Patient.create(req.body);
         res.status(200).json(patientData);
     } catch (err) {
         res.status(400).json(err);
@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
 
 router.delete('/:id', async (req,res) => {
     try {
-        const patientData = await User.destroy({
+        const patientData = await Patient.destroy({
             where: { id: req.params.id }
         });
         if (!patientData) {
