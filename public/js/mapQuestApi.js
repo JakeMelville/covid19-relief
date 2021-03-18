@@ -49,4 +49,21 @@ function locFinder(event) {
         });
 }
 
-document.getElementById('submitBtn').addEventListener("click", locFinder)
+document.getElementById('submitBtn').addEventListener("click", locFinder);
+
+function showTest() {
+    console.log("show")
+    document.getElementById("covid-updates").style.visibility = "hidden"; 
+    document.getElementById("test-locations").classList.remove("invisible"); 
+    document.getElementById("vaccine-finder").classList.add("invisible"); 
+   // document.getElementById("test-locations").classList.add('article');
+  }
+  function showVaccine() {
+    console.log("show")
+    document.getElementById("covid-updates").style.visibility = "hidden"; 
+    document.getElementById("vaccine-finder").classList.remove("invisible"); 
+    document.getElementById("test-locations").classList.add("invisible"); 
+  }
+  
+  //function showElem() {
+    //document.getElementById("myImg").style.visibility = "visible"; 
