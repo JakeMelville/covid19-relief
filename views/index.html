@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>COVID Relief</title>
+    <title>COVID-19 Relief</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -44,72 +44,53 @@
                 <div class="row">
                     <div class="col-lg" id="covid-updates">
                         <p class="text-center">Click on image for NJ COVID-19 updates.</p>
-                        <a href="https://www.nytimes.com/interactive/2020/us/new-jersey-coronavirus-cases.html"target="_blank"><img
+                        <a href="https://www.nytimes.com/interactive/2020/us/new-jersey-coronavirus-cases.html"
+                            target="_blank"><img
                                 src="https://directorsblog.nih.gov/wp-content/uploads/2020/07/COVID-19-Card-24.jpg"
                                 class="rounded mx-auto d-block"></a>
                     </div>
-                    <div class="col-lg" id="test-locations">
-                        <div id="map"></div>
-                        <form>
-                            <input id="input" type="text" placeholder="City, State">
-                            <button class='btn-primary' type="submit">Submit</button>
-                        </form>
-                    </div>
-
                 </div>
-                <div class="row">
-                    <div class="col-lg" id="vaccine-finder">
-                        <iframe src="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-finder-widget.html"
-                            scrolling="no" height="400" frameborder="0" width="280" title="Vaccine Finder Widget"
-                            style="overflow: hidden; frameborder=" 0"></textarea>
-                            <!–- Vaccine Finder Widget–-!></textarea>
-                        </iframe>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg " id="vaccine-finder">
+                            <iframe src="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-finder-widget.html"
+                                scrolling="no" height="400" frameborder="0" width="280" title="Vaccine Finder Widget"
+                                style="overflow: hidden" frameborder="0"></textarea>
+                                <!–- Vaccine Finder Widget–-!></textarea>
+                            </iframe>
+                        </div>
                     </div>
                 </div>
             </div>
-  
-        <div class="container">
-            <div class="row">
-              <div class="col-lg" id="test-locations">
-                <div id="map"></div>
 
             <div class="container">
                 <div class="row">
-                    <h2 class="col-12 text-center">Find Testing Centers Near You</h2>
-                    <form class="col-12 text-center">
-                        <input id="input" type="text" placeholder="City, State">
-                        <button id="submitBtn" class='btn-primary' type="submit">Submit</button>
-                    </form>
-                    <div class="col" id="test-locations">
-                        <ul id="resultsLocations">
-                            <li id="result-1"></li>
-                            <li id="result-2"></li>
-                            <li id="result-3"></li>
-                            <li id="result-4"></li>
-                            <li id="result-5"></li>
-                        </ul>
-                    </div>
+                    <div class="col-lg" id="test-locations">
+                        <div id="map"></div>
 
-            </div>
-            <div class="row">
-                <div class="col-lg">
-                    <a href="https://g.co/kgs/KWnkMR" target="_blank">COVID-19 Statics</a>
+                        <div class="container">
+                            <div class="row">
+                                <h2 class="col-12 text-center">Find Testing Centers Near You</h2>
+                                <form class="col-12 text-center">
+                                    <input id="input" type="text" placeholder="City, State">
+                                    <button id="submitBtn" class='btn-primary' type="submit">Submit</button>
+                                </form>
+                                <div class="col" id="test-locations">
+                                    <ul id="resultsLocations">
+                                        <li id="result-1"></li>
+                                        <li id="result-2"></li>
+                                        <li id="result-3"></li>
+                                        <li id="result-4"></li>
+                                        <li id="result-5"></li>
+                                    </ul>
+                                </div>
 
-                </div>
-                <div class="bingwidget" data-type="covid19" data-market="en-us" data-language="en-us" data-app="bingwidget"></div>
-                <div class="col-6 text-center" id="vaccine-finder">
-                    <iframe src="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-finder-widget.html"
-                        scrolling="no" height="400" frameborder="0" width="280" title="Vaccine Finder Widget"
-                        style="overflow: hidden" ; frameborder="0"></textarea>
-                        <!–- Vaccine Finder Widget–-!></textarea>
-                    </iframe>
-                </div>
-            </div>
+                            </div>
 
-      
-      </div>
+                        </div>
 
-    </main>
-    <script src="../public/js/mapQuestApi.js"></script>
+        </main>
+        <script src="../public/js/mapQuestApi.js"></script>
 </body>
+
 </html>
