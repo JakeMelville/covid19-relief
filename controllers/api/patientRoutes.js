@@ -6,7 +6,7 @@ router.post("/", async (req, res) => {
   console.log("POST /api/patient/")
   try {
     const patientData = await Patient.create({
-      username: req.body.username,
+      email: req.body.email,
       password: req.body.password,
       name: req.body.name,
       cellPhone: req.body.cellPhone,
@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
 
     req.session.save(() => {
       req.session.patientId = patientData.id;
-      req.session.username = patientData.username;
+      req.session.email = patientData.email;
       req.session.loggedIn = true;
 
       res.json(patientData);
@@ -30,7 +30,7 @@ router.post("/login", async (req, res) => {
   console.log("POST /api/patient/login")
   try {
     const patient = await Patient.findOne({
-      where: { username: req.body.username },
+      where: { email: req.body.email },
     });
 
     if (!patient) {
@@ -47,7 +47,7 @@ router.post("/login", async (req, res) => {
 
     req.session.save(() => {
       req.session.patientId = patientData.id;
-      req.session.username = patientData.username;
+      req.session.email = patientData.email;
       req.session.loggedIn = true;
 
       res.json({ patient, message: "You are now logged in!" });
