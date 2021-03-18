@@ -33,7 +33,7 @@
                     <a href="#vaccine-finder">Vaccine Finder</a>
                 </li>
                 <li class="col text-center">
-                    <a href="#my-profile">My Profile</a>
+                    <a href="./myProfile.html">My Profile</a>
 
                 </li>
             </ul>
@@ -48,49 +48,44 @@
                                 src="https://directorsblog.nih.gov/wp-content/uploads/2020/07/COVID-19-Card-24.jpg"
                                 class="rounded mx-auto d-block"></a>
                     </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg " id="vaccine-finder">
-                            <iframe src="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-finder-widget.html"
-                                scrolling="no" height="400" frameborder="0" width="280" title="Vaccine Finder Widget"
-                                style="overflow: hidden" frameborder="0"></textarea>
-                                <!–- Vaccine Finder Widget–-!></textarea>
-                            </iframe>
-                        </div>
-                    </div>
+
+                    <h2 class="col-12 text-center mt-5">Find Testing Centers Near You</h2>
+                    <form class="col-12 text-center">
+                        <input id="input" type="text" placeholder="City, State">
+                        <button id="submitBtn" class='btn-primary' type="submit">Submit</button>
+                    </form>
+                    <div class="col" id="test-locations">
+                        <ul id="resultsLocations">
+                            <li class="mb-2" id="result-1"></li>
+                            <li class="mb-2" id="result-2"></li>
+                            <li class="mb-2" id="result-3"></li>
+                            <li class="mb-2" id="result-4"></li>
+                            <li class="mb-2" id="result-5"></li>
+                        </ul>
+                      </div>
+                      <div class="col" id="map"></div>
                 </div>
             </div>
 
             <div class="container">
                 <div class="row">
-                    <div class="col-lg" id="test-locations">
-                        <div id="map"></div>
-
-                        <div class="container">
-                            <div class="row">
-                                <h2 class="col-12 text-center">Find Testing Centers Near You</h2>
-                                <form class="col-12 text-center">
-                                    <input id="input" type="text" placeholder="City, State">
-                                    <button id="submitBtn" class='btn-primary' type="submit">Submit</button>
-                                </form>
-                                <div class="col" id="test-locations">
-                                    <ul id="resultsLocations">
-                                        <li id="result-1"></li>
-                                        <li id="result-2"></li>
-                                        <li id="result-3"></li>
-                                        <li id="result-4"></li>
-                                        <li id="result-5"></li>
-                                    </ul>
-                                </div>
-
-                    <div class="col" id="map"></div>
+                    <div class="col-12 text-center mt-5" id="vaccine-finder">
+                        <iframe src="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-finder-widget.html"
+                            scrolling="no" height="400" frameborder="0" width="280" title="Vaccine Finder Widget"
+                            style="overflow: hidden" ; frameborder="0"></textarea>
+                            <!–- Vaccine Finder Widget–-!></textarea>
+                        </iframe>
+                    </div>
 
                 </div>
             </div>
-    </div>
   </main>
-   <script src="../public/js/mapQuestApi.js"></script>
+    </div>
+
+
+    <script src="../public/js/mapQuestApi.js"></script>
+
+
 </body>
 
 </html>
