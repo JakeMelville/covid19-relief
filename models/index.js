@@ -1,5 +1,6 @@
 const Patient = require('./Patient');
 const Location = require('./Location');
+const User = require('./User');
 
 Location.belongsToMany(Patient, {
     foreignKey: 'location_id',
@@ -11,5 +12,9 @@ Patient.belongsToMany(Location, {
     onDelete: 'CASCADE'
 });
 
-module.exports = { Patient, Location };
+User.belongsTo(Patient, {
+    foreignKey: "user_id",
+});
+
+module.exports = { Patient, Location, User };
 
