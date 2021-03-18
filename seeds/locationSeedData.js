@@ -6,7 +6,7 @@ const locationData = [
     street_address: "10 park ave",
     city: "Hackensack",
     state: "NJ",
-    zip: 07603,
+    zip: "07603",
   },
   {
     practice_name: "CVS",

@@ -15,7 +15,7 @@ Patient.belongsToMany(Location, {
     model: Register,
     unique: false,
   },
-  as: "user_register",
+  as: "patient_register",
 });
 
 module.exports = { Patient, Location, Register };
