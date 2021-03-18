@@ -1,6 +1,6 @@
 const seedLocation = require('./locationSeedData');
 // const seedPatients = require('./patientSeedData');
-const seedUsers = require('./userData');
+const seedUsers = require('./patientData');
 
 const sequelize = require('../config/connection');
 

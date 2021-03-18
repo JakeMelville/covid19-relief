@@ -1,5 +1,5 @@
 const router = rrquire('express').Router();
-const { Location, Patient, User } = require('../../models');
+const { Location, Patient, Register } = require('../../models');
 
 router.get('/', async (req, res) => {
     try {
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const locationData = await Location.findOne(req.params.id, {
-            include: [{ model: User, through: Patient, as: 'location_user'}]
+            include: [{ model: Register, through: Patient, as: 'location_user'}]
         });
 
         if (!locationData) {

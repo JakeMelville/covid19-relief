@@ -1,33 +1,23 @@
-// const Patient = require('./Patient');
+const Patient = require('./Patient');
 const Location = require('./Location');
-const User = require('./User');
+const Register = require('./Register');
 
-// Location.belongsToMany(Patient, {
-//     through: User,
-//     foreignKey: 'location_id',
-//     onDelete: 'CASCADE'
-// });
-
-// Patient.belongsToMany(Location, {
-//     through: User,
-//     foreignKey: 'patient_id',
-//     onDelete: 'CASCADE'
-// });
-
-// User.belongsTo(Patient, {
-//     foreignKey: "user_id",
-// });
-
-
-User.hasMany(Location, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
+Location.belongsToMany(Patient, {
+    through: {
+        model: Register,
+        unique: false
+    },
+    as: 'location_patient'
 });
 
-Location.belongsTo(User, {
-    foreignKey: 'user_id'
+Patient.belongsToMany(Location, {
+    through: {
+        model: Register,
+        unique: false,
+    },
+    as: 'user_register'
 });
 
-module.exports = { User, Location }
-// module.exports = { Patient, Location, User };
+
+module.exports = { Patient, Location, Register };
 
