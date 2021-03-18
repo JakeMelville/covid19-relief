@@ -30,7 +30,7 @@
                     <a href="#test-locations" onclick="showTest()">Test Locations</a>
                 </li>
                 <li class="col text-center">
-                    <a href="#vaccine-finder">Vaccine Finder</a>
+                    <a href="#vaccine-finder" onclick="showVaccine()">Vaccine Finder</a>
                 </li>
                 <li class="col text-center">
                     <a href="#my-profile">My Profile</a>
@@ -50,23 +50,9 @@
                     </div>
                 </div>
             </div>
-            <div class="invisible" id="vaccine-finder">
-                <div class="row">
-                    <div class="col-lg" >
-                        <iframe src="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-finder-widget.html"
-                            scrolling="no" height="400" frameborder="0" width="300" title="Vaccine Finder Widget"
-                            style="overflow: hidden" frameborder="0"></textarea>
-                            <!–- Vaccine Finder Widget–-!></textarea>
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-
             <div class="invisible" id="test-locations">
                 <div class="row">
-                    <div class="col-lg" >
-                        <div id="map"></div>
-
+                    <div class="col-lg">
                         <div class="container">
                             <div class="row">
                                 <h2 class="col-12 text-center">Find Testing Centers Near You</h2>
@@ -82,15 +68,28 @@
                                         <li id="result-4"></li>
                                         <li id="result-5"></li>
                                     </ul>
+                                    <div class="col" id="map"></div>
                                 </div>
-
-                    <div class="col" id="map"></div>
-
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="invisible" id="vaccine-finder">
+                <div class="row">
+                    <div class="col-lg">
+                        <iframe src="https://www.cdc.gov/coronavirus/2019-ncov/vaccines/vaccine-finder-widget.html"
+                            scrolling="no" height="400" frameborder="0" width="300" title="Vaccine Finder Widget"
+                            style="overflow: hidden" frameborder="0"></textarea>
+                            </textarea>
+                        </iframe>
+                    </div>
                 </div>
             </div>
-    </div>
-  </main>
-   <script src="../public/js/mapQuestApi.js"></script>
+
+           
+            </div>
+        </main>
+        <script src="../public/js/mapQuestApi.js"></script>
 </body>
 
 </html>

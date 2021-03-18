@@ -81,19 +81,22 @@ nav ul li {
     font-weight: bold;
 }
 
-.vaccine-finder.hidden {
-    visibility: hidden;
-    display: none;
-    align-items: center;
-    align-content: center;
-}
-.test-locations.hidden {
-    display: none;
-    visibility: hidden;
+.test-locations {
+    padding-bottom:unset ;
 }
 iframe {
     padding: 10px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+img {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.resultLocations {
+text-align:left ;
 }
