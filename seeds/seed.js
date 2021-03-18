@@ -1,19 +1,22 @@
+const seedLocation = require('./locationSeedData');
+const seedPatients = require('./patientSeedData');
+const seedUsers = require('./userData');
+
 const sequelize = require('../config/connection');
-const { Patient, Location, User } = require('../models');
 
-const patientSeedData = require('./pateintSeedData.json');
-const locationSeedData = require('./locationSeedData.json');
-const userData = require('./userData.json');
-
-const seedDatabase = async () => {
+const seedAll = async () => {
   await sequelize.sync({ force: true });
+  console.log('\n----- DATABASE SYNCED -----\n');
+  await seedPatients();
+  console.log('\n----- PATIENT SEEDED -----\n');
 
-  const patients = await Patient.bulkCreate(patientSeedData);
+  await seedLocation();
+  console.log('\n----- LOCATION SEEDED -----\n');
 
-  const locations = await Location.bulkCreate(locationSeedData);
+  await seedUsers();
+  console.log('\n----- USERS SEEDED -----\n');
 
-  const users = await User.bulkCreate(userData);
+  process.exit(0);
+};
 
-}
-
-  seedDatabase();
+seedAll();
