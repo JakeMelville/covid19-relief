@@ -21,6 +21,6 @@ const patientData = [
   },
 ];
 
-const seedUsers = () => User.bulkCreate(userData);
+const seedUsers = () => Patient.bulkCreate(patientData);
 
 module.exports = seedUsers;
