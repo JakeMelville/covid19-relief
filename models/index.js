@@ -3,11 +3,13 @@ const Location = require('./Location');
 const User = require('./User');
 
 Location.belongsToMany(Patient, {
+    through: User,
     foreignKey: 'location_id',
     onDelete: 'CASCADE'
 });
 
 Patient.belongsToMany(Location, {
+    through: User,
     foreignKey: 'patient_id',
     onDelete: 'CASCADE'
 });
