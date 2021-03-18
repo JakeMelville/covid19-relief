@@ -1,3 +1,7 @@
+const { User } = require('../models');
+
+const 
+
 [
     {
         "name": "Tanner",
