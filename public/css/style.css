@@ -42,7 +42,7 @@ header {
 }
 /*Navigation Bar*/
 nav ul{
-    background-color: white;
+    background-color: lightskyblue;
     padding: 2px;
     text-align: right;
     border-style: solid;
@@ -60,6 +60,11 @@ nav a {
 .vaccine-finder {
     align-items: center;
 }
+iframe {
+    align-content: center;
+    align-self: center;
+    
+}
 
 nav a:hover {
     background-color: white;
@@ -75,3 +80,4 @@ nav ul li {
     list-style-type: none;
     font-weight: bold;
 }
+
