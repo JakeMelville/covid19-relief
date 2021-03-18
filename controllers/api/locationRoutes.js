@@ -1,4 +1,4 @@
-const router = rrquire("express").Router();
+const router = require("express").Router();
 const { Location, Patient, Register } = require("../../models");
 
 router.get("/", async (req, res) => {

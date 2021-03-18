@@ -1,17 +1,21 @@
 const router = require("express").Router();
 const { Patient, Register, Location } = require("../../models");
 
+// URL: /api/patient/
 router.post("/", async (req, res) => {
+  console.log("POST /api/patient/")
   try {
     const patientData = await Patient.create({
       username: req.body.username,
       password: req.body.password,
+      name: req.body.name,
+      cellPhone: req.body.cellPhone,
     });
 
     req.session.save(() => {
-      req.session.patient_id = patientData.id;
+      req.session.patientId = patientData.id;
       req.session.username = patientData.username;
-      req.session.logged_in = true;
+      req.session.loggedIn = true;
 
       res.json(patientData);
     });
@@ -20,7 +24,10 @@ router.post("/", async (req, res) => {
   }
 });
 
+
+// URL: /api/patient/login
 router.post("/login", async (req, res) => {
+  console.log("POST /api/patient/login")
   try {
     const patient = await Patient.findOne({
       where: { username: req.body.username },
@@ -39,9 +46,9 @@ router.post("/login", async (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.patient_id = patientData.id;
+      req.session.patientId = patientData.id;
       req.session.username = patientData.username;
-      req.session.logged_in = true;
+      req.session.loggedIn = true;
 
       res.json({ patient, message: "You are now logged in!" });
     });

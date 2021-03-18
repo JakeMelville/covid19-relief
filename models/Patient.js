@@ -35,7 +35,7 @@ Patient.init(
         len: [8],
       },
     },
-    cell_phone: {
+    cellPhone: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
