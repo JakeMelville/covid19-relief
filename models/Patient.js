@@ -44,7 +44,10 @@ Patient.init(
   {
     hooks: {
       beforeCreate: async (newPatientData) => {
-        newPatientData.password = await bcrypt.hash(newPatientData.password, 10);
+        newPatientData.password = await bcrypt.hash(
+          newPatientData.password,
+          10
+        );
         return newPatientData;
       },
       beforeUpdate: async (updatedPatientData) => {

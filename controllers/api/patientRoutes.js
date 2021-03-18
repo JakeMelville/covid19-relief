@@ -4,8 +4,8 @@ const { Patient, Register, Location } = require("../../models");
 router.post("/", async (req, res) => {
   try {
     const patientData = await Patient.create({
-        username: req.body.username,
-        password: req.body.password
+      username: req.body.username,
+      password: req.body.password,
     });
 
     req.session.save(() => {
@@ -46,7 +46,7 @@ router.post("/login", async (req, res) => {
       res.json({ patient, message: "You are now logged in!" });
     });
   } catch (err) {
-    res.status(400).json({ message: 'No user account found!' });
+    res.status(400).json({ message: "No user account found!" });
   }
 });
 
