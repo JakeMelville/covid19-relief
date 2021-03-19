@@ -12,7 +12,7 @@ router.post("/", async (req, res) => {
     const regData = await Register.create({
       ...req.body,
       patient_id: req.session.patientId,
-      location_id
+      // location_id
     });
     res.status(200).json(regData);
   } catch (err) {

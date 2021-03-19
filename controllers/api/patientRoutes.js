@@ -35,8 +35,12 @@ router.post("/login", async (req, res) => {
       where: { email: req.body.email },
     });
     console.log('Patient: ', patient)
+    
+
+
     if (!patient) {
       res.status(404).json({ message: "Login failed, please try again" });
+      res.status(410).redirect('/login')
       return;
     }
     
@@ -54,7 +58,9 @@ router.post("/login", async (req, res) => {
       req.session.email = patient.email;
       req.session.loggedIn = true;
 
+      res.status(410).redirect('/')
       res.json({ patient, message: "You are now logged in!" });
+
     });
   } catch (err) {
     res.status(400).json({ message: "No user account found!" });
@@ -71,13 +77,14 @@ router.post("/logout", (req, res) => {
   }
 });
 
-// router.get('/signup', (req, res) => {
-//   if (req.session.loggedIn) {
-//     res.redirect('/');
-//     return;
-//   }
+router.get('/signup', (req, res) => {
+  console.log("/signup git")
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
 
-//   res.render('signup');
-// });
+  res.render('signup');
+});
 
 module.exports = router;
