@@ -12,7 +12,7 @@ const mapUrl = 'https://open.mapquestapi.com/staticmap/v5/map?key=';
 =======
 const apiKey = key.map_key;
 const discoverApiKey = key.dicover_key;
-const locationInput = document.getElementById("input"); //user inputle
+const locationInput = document.getElementById("input"); //user input
 const mapUrl = 'https://open.mapquestapi.com/staticmap/v5/map?key=';
 >>>>>>> 6a84a4d67b64c6dcc2f460cd33736a029abd03d6
 
@@ -68,4 +68,21 @@ function locFinder(event) {
         });
 }
 
-document.getElementById('submitBtn').addEventListener("click", locFinder)
+document.getElementById('submitBtn').addEventListener("click", locFinder);
+
+function showTest() {
+    console.log("show")
+    document.getElementById("covid-updates").style.visibility = "hidden"; 
+    document.getElementById("test-locations").classList.remove("invisible"); 
+    document.getElementById("vaccine-finder").classList.add("invisible"); 
+   // document.getElementById("test-locations").classList.add('article');
+  }
+  function showVaccine() {
+    console.log("show")
+    document.getElementById("covid-updates").style.visibility = "hidden"; 
+    document.getElementById("vaccine-finder").classList.remove("invisible"); 
+    document.getElementById("test-locations").classList.add("invisible"); 
+  }
+  
+  //function showElem() {
+    //document.getElementById("myImg").style.visibility = "visible"; 
