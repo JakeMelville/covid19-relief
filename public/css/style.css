@@ -75,15 +75,9 @@ nav ul li {
     list-style: none;
     display: inline-block;
 }
-<<<<<<< HEAD
-#resultsLocations {
-    list-style-type: none;
-}
-=======
 
 #resultsLocations {
     list-style-type: none;
     font-weight: bold;
 }
 
->>>>>>> 6a84a4d67b64c6dcc2f460cd33736a029abd03d6
