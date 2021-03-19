@@ -71,6 +71,11 @@ router.post("/logout", (req, res) => {
   }
 });
 
+router.post('/login', (req, res) => {
+  req.login(patient, (err) => {
+      res.render('../../public/covid');
+});
+
 // router.get('/signup', (req, res) => {
 //   if (req.session.loggedIn) {
 //     res.redirect('/');
