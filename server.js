@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-const express = require("express");
-const routes = require("./controllers");
-const sequelize = require("./config/connection");
-const path = require('path');
-=======
 const express = require('express');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const path = require('path')
->>>>>>> 6a84a4d67b64c6dcc2f460cd33736a029abd03d6
 
 const session = require("express-session");
 
