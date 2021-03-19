@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Register } = require("../../models");
+// const withAuth = require('../../utils/auth')
 
 // path = /api/register
 router.post("/", async (req, res) => {
@@ -37,5 +38,17 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+// router.post('/', withAuth, async (req, res) => {
+//   try {
+//     const newLocation = await Location.create({
+//       ...req.body,
+//       userId: req.session.userId
+//     });
+//     res.json(newLocation);
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;

@@ -1,7 +1,7 @@
 const apiUrl = 'http://www.mapquestapi.com/geocoding/v1/address?key=';
 const apiKey = key.map_key;
 const discoverApiKey = key.dicover_key;
-const locationInput = document.getElementById("input"); //user inputle
+const locationInput = document.getElementById("input"); //user input
 const mapUrl = 'https://open.mapquestapi.com/staticmap/v5/map?key=';
 
 
