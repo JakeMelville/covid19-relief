@@ -67,6 +67,7 @@ router.post("/logout", (req, res) => {
   }
 });
 
+<<<<<<< HEAD
 // router.get('/signup', (req, res) => {
 //   if (req.session.loggedIn) {
 //     res.redirect('/');
@@ -79,4 +80,6 @@ router.post("/logout", (req, res) => {
 module.exports = router;
 
 
+=======
+>>>>>>> dhruvi94
 module.exports = router;
