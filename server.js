@@ -5,6 +5,7 @@ const path = require('path')
 const passport = require('passport');
 
 const session = require("express-session");
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -14,9 +15,9 @@ const sess = {
   cookie: {},
   resave: false,
   saveUninitialized: true,
-  // store: new SequelizeStore({
-  //     db: sequelize
-  // })
+  store: new SequelizeStore({
+      db: sequelize
+  })
 };
 
 app.use(session(sess));
