@@ -40,6 +40,7 @@ router.post("/login", async (req, res) => {
 
     if (!patient) {
       res.status(404).json({ message: "Login failed, please try again" });
+      res.status(410).redirect('/login')
       return;
     }
     
@@ -56,7 +57,7 @@ router.post("/login", async (req, res) => {
       req.session.name = patient.name;
       req.session.email = patient.email;
       req.session.loggedIn = true;
-      
+
       res.status(410).redirect('/')
       res.json({ patient, message: "You are now logged in!" });
 
