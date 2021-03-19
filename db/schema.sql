@@ -1,2 +1,4 @@
-DROP DATABASE IF EXISTS test_center_db;
-CREATE DATABASE test_center_db;
+
+DROP DATABASE IF EXISTS covid_db;
+CREATE DATABASE covid_db;
+

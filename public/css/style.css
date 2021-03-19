@@ -1,11 +1,29 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-size: 100%;
+* {
+    box-sizing: border-box;
+    /* padding: 10px;
+    margin: 10px; */
+    
+}
+#backgroundImg {
+    background-image: url("../images/covid-19-image.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.img {
+    height: 100px;
+    width: 200px;
+    position: relative;
+    background-position: center;
+    flex: 1 0 auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .bg-img {
-    background-image: url("./images/covid-3.jpg");
     min-height: 380px;
     position: relative;
     background-position: center;
@@ -13,26 +31,42 @@ body {
     background-size: cover;
 }
 
-.container {
-    margin: 20px;
-    width: auto;
-    position: absolute;
-}
-
-.topnav {
-    overflow: hidden;
-    background-color: #333;
-}
-
-.topnav a {
-    float: left;
+/*Header*/
+header {
+    font-size: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
     text-align: center;
-    padding: 14px 16px;
-    color: #f2f2f2;
-    text-decoration: none;
-    font-size: 17px;
+    justify-content:space-between;
+    width: 98%;
+}
+/*Navigation Bar*/
+nav ul{
+    background-color: lightskyblue;
+    padding: 2px;
+    text-align: right;
+    border-style: solid;
 }
 
+nav a {
+    display: block;
+    color:black;
+    padding: 2px;
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.vaccine-finder {
+    align-items: center;
+}
+iframe {
+    align-content: center;
+    align-self: center;
+    
+}
+
+<<<<<<< HEAD
 .topnav a:hover {
     background-color: #ddd;
     color: black;
@@ -40,4 +74,39 @@ body {
 .location-results {
     display:none;
     list-style: none;
+=======
+nav a:hover {
+    background-color: aquamarine;
+    color:grey;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+#resultsLocations {
+    list-style-type: none;
+    font-weight: bold;
+}
+
+.test-locations {
+    padding-bottom:unset ;
+}
+iframe {
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+img {
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+
+.resultLocations {
+text-align:left ;
+>>>>>>> b45c513473ee5daa50aee6921ce7b876eccd4448
 }
