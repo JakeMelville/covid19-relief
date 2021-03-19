@@ -12,6 +12,8 @@ router.post("/", async (req, res) => {
       cellPhone: req.body.cellPhone,
     });
 
+    
+
     req.session.save(() => {
       req.session.patientId = patientData.id;
       req.session.email = patientData.email;
