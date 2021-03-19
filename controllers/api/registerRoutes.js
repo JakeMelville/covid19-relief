@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Register } = require("../../../covid19-relief copy/models");
+const { Register } = require("../../models");
 
 router.post("/", async (req, res) => {
   try {
