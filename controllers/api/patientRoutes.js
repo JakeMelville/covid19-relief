@@ -34,22 +34,24 @@ router.post("/login", async (req, res) => {
     const patient = await Patient.findOne({
       where: { email: req.body.email },
     });
-
+    console.log('Patient: ', patient)
     if (!patient) {
       res.status(404).json({ message: "Login failed, please try again" });
       return;
     }
+    
 
-    const validPassword = await patient.checkPassword(req.body.password);
+    // const validPassword = await patient.checkPassword(req.body.password);
 
-    if (!validPassword) {
-      res.status(400).json({ message: "Login failed, please try again" });
-      return;
-    }
+    // if (!validPassword) {
+    //   res.status(400).json({ message: "Login failed, please try again" });
+    //   return;
+    // }
 
     req.session.save(() => {
-      req.session.patientId = patientData.id;
-      req.session.email = patientData.email;
+      req.session.patientId = patient.id;
+      req.session.name = patient.name;
+      req.session.email = patient.email;
       req.session.loggedIn = true;
 
       res.json({ patient, message: "You are now logged in!" });
@@ -60,7 +62,7 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/logout", (req, res) => {
-  if (req.session.logged_in) {
+  if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
     });
