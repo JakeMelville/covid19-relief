@@ -17,12 +17,14 @@
   },
   "homepage": "https://github.com/JakeMelville/covid19-relief#readme",
   "dependencies": {
+    "bcrypt": "5.0.1",
+    "connect-session-sequelize": "7.1.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
-    "connect-session-sequelize": "7.1.1",
     "mysql2": "^2.2.5",
-    "bcrypt": "5.0.1",
-    "sequelize": "^6.5.1"
+    "passport": "^0.4.1",
+    "sequelize": "^6.5.1",
+    "session-file-store": "^1.5.0"
   }
 }
