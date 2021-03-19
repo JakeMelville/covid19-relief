@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/JakeMelville/covid19-relief#readme",
   "dependencies": {
+<<<<<<< HEAD
+    "axios": "^0.21.1"
+=======
     "bcrypt": "5.0.1",
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^8.2.0",
@@ -25,5 +28,6 @@
     "mysql2": "^2.2.5",
     "sequelize": "^6.5.1",
     "session-file-store": "^1.5.0"
+>>>>>>> b45c513473ee5daa50aee6921ce7b876eccd4448
   }
 }
