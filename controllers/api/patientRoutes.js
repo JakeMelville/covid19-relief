@@ -22,8 +22,9 @@ router.post("/", async (req, res) => {
       req.session.loggedIn = true;
 
 
-      res.status(410).redirect('/')
+      // res.status(410).redirect('myProfile')
       res.json({patientData, message: "You have successfully signed up!" });
+      return res.status(410).redirect('/myProfile')
 
     });
   } catch (err) {
