@@ -22,7 +22,7 @@ router.post("/", async (req, res) => {
       req.session.loggedIn = true;
 
 
-      // res.status(410).redirect('/')
+      res.status(410).redirect('/')
       res.json({patientData, message: "You have successfully signed up!" });
 
     });
@@ -104,6 +104,10 @@ router.get('/:id', (req, res) => {
   });
   
 });
+
+router.get('/', (req, res) => {
+  res.render('myProfile', { name: name }, { email: email }, { cellPhone: cellPhone });
+})
 
 router.get('/signup', (req, res) => {
   console.log("/signup git")
