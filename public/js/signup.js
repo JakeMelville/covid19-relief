@@ -5,16 +5,15 @@ const patientData = async function(event) {
     const email = document.querySelector('h2[name="email"]').value;
     const cellPhone = document.querySelector('h3[name="cellPhone"]').value;
   
-    await fetch().then(result => {
+    fetch("api/:id", {
       method: 'GET',
       body: JSON.stringify({
-        name,
-        email,
-        cellPhone,
-      });
+        name: name,
+        email: email,
+        cellPhone: cellPhone,
+      }),
       headers: { 'Content-Type': 'application/json' }
-    });
-  
-    document.location.replace('/myProfile');
-  };
-  
+    }).then(function() {
+      document.location.replace('/myProfile');
+  });
+}
