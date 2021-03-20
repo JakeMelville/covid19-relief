@@ -17,9 +17,14 @@ router.post("/", async (req, res) => {
     req.session.save(() => {
       req.session.patientId = patientData.id;
       req.session.email = patientData.email;
+      req.session.cellPhone = patientData.cellPhone;
+      req.session.name = patientData.name
       req.session.loggedIn = true;
 
-      res.json(patientData);
+
+      res.status(410).redirect('/')
+      res.json({patientData, message: "You have successfully signed up!" });
+
     });
   } catch (err) {
     res.status(500).json(err);
@@ -35,8 +40,12 @@ router.post("/login", async (req, res) => {
       where: { email: req.body.email },
     });
     console.log('Patient: ', patient)
+    
+
+
     if (!patient) {
       res.status(404).json({ message: "Login failed, please try again" });
+      res.status(410).redirect('/login')
       return;
     }
     
@@ -54,7 +63,9 @@ router.post("/login", async (req, res) => {
       req.session.email = patient.email;
       req.session.loggedIn = true;
 
+      res.status(410).redirect('/')
       res.json({ patient, message: "You are now logged in!" });
+
     });
   } catch (err) {
     res.status(400).json({ message: "No user account found!" });
@@ -71,18 +82,37 @@ router.post("/logout", (req, res) => {
   }
 });
 
-router.post('/login', (req, res) => {
-  req.login(patient, (err) => {
-      res.render('../../public/covid');
-});
-
-// router.get('/signup', (req, res) => {
-//   if (req.session.loggedIn) {
-//     res.redirect('/');
-//     return;
-//   }
-
-//   res.render('signup');
+// router.get('/:id', (req, res) => {
+//   Patient.findOne({
+//     where: {
+//       id: req.params.id,
+//     },
+//       include: [{ model: Patient }],
+//       attributes: {
+//         include: [ "id", "email", "name", "cellPhone" ]
+//       }
+//     })
+//     .then(patientData => {
+//       if (!patientData) {
+//         res.status(404).json({ message: 'No category found with that id!'});
+//         return;
+//     }
+//     res.render('myProfile');
+//   })
+//   .catch (err => {
+//     res.status(500),json(err);
+//   });
+  
 // });
+
+router.get('/signup', (req, res) => {
+  console.log("/signup git")
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('signup');
+});
 
 module.exports = router;
