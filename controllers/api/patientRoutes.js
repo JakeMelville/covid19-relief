@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
 
       // res.status(410).redirect('myProfile')
       res.json({patientData, message: "You have successfully signed up!" });
-      return res.status(410).redirect('/myProfile')
+      // return res.status(410).redirect('/myProfile')
 
     });
   } catch (err) {
@@ -88,27 +88,29 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id,
     },
-      include: [{ model: Patient }],
-      attributes: {
-        include: [ "id", "email", "name", "cellPhone" ]
-      }
+      // include: [{ model: db.Patient }],
+      // attributes: {
+      //   include: [ "id", "email", "name", "cellPhone" ]
+      // }
     })
     .then(patientData => {
+      console.log(patientData)
       if (!patientData) {
         res.status(404).json({ message: 'No category found with that id!'});
         return;
     }
-    res.render('myProfile');
+    res.json(patientData);
   })
   .catch (err => {
-    res.status(500),json(err);
+    console.log(err)
+    res.status(500).json(err);
   });
   
 });
 
-router.get('/', (req, res) => {
-  res.render('myProfile', { name: name }, { email: email }, { cellPhone: cellPhone });
-})
+// router.get('/', (req, res) => {
+//   res.render('myProfile', { name: name }, { email: email }, { cellPhone: cellPhone });
+// })
 
 router.get('/signup', (req, res) => {
   console.log("/signup git")
