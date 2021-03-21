@@ -12,6 +12,10 @@ router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/myProfile.html"));
 });
 
+router.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/testingLocation.html"));
+});
+
 // router.get("/", async (req, res) => {
 //   try {
 //     const locationData = await Location.findAll({
