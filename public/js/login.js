@@ -19,9 +19,10 @@ const patientData = async function (event) {
 
   // $("#new-patient-form").empty();
 
-  name.textContent = "Patients Name: " + patientData.name;
+  name.textContent = "Patient's Name: " + patientData.name;
   email.textContent = "Email: " + patientData.email;
-  cellPhone.textContent = "Cell-Phone: " + patientData.cellPhone;
+  cellPhone.textContent = "CellPhone: " + patientData.cellPhone;
+
 
   // .then(function(res) {
   //     res.json()
