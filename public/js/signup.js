@@ -5,7 +5,7 @@ const patientData = async function(event) {
     const email = document.querySelector('h2[name="email"]');
     const cellPhone = document.querySelector('h3[name="cellPhone"]');
   
-    var response = await fetch("api/patient/5", {
+    var response = await fetch("api/patient/4", {
       // method: 'GET',
       // body: JSON.stringify({
       //   name: name,
