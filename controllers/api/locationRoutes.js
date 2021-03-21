@@ -6,7 +6,7 @@ router.post("/", withAuth, async (req, res) => {
   try {
     const patientLocation = await Location.create({
       ...req.body,
-      userId: req.session.userId
+      patientId: req.session.patientId
     });
 
     res.status(200).json(patientLocation);
@@ -37,7 +37,7 @@ router.delete("/:id", withAuth, async (req, res) => {
     const locationData = await Location.destroy({
       where: {
         id: req.params.id,
-        userId: req.session.userId
+        patientId: req.session.patientId
       },
     });
 
@@ -54,4 +54,4 @@ router.delete("/:id", withAuth, async (req, res) => {
 
 module.exports = router;
 
-module.exports = router;
+

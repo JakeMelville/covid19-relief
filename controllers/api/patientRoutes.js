@@ -22,9 +22,10 @@ router.post("/", async (req, res) => {
       req.session.loggedIn = true;
 
 
-      // res.status(410).redirect('myProfile')
+      // res.status(410).redirect('/myProfile')
       res.json({patientData, message: "You have successfully signed up!" });
       // return res.status(410).redirect('/myProfile')
+      // res.json(patientData)
 
     });
   } catch (err) {
@@ -86,7 +87,7 @@ router.post("/logout", (req, res) => {
 router.get('/:id', (req, res) => {
   Patient.findOne({
     where: {
-      id: req.params.id,
+      id: req.session.patientId,
     },
       // include: [{ model: db.Patient }],
       // attributes: {
