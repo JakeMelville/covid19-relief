@@ -18,7 +18,7 @@ router.get("/", (req, res) => {
 //       include: [
 //         {
 //           model: Patient,
-//           attributes: ["name"],
+//           attributes: ["practice_name", "street_address", "city", "state", "zip"],
 //         },
 //       ],
 //     });
@@ -28,7 +28,7 @@ router.get("/", (req, res) => {
 //     );
 
 //     res.render("covid", {
-//       location,
+//       locations,
 //       loggedIn: req.session.loggedIn,
 //     });
 //   } catch (err) {
@@ -42,7 +42,7 @@ router.get("/", (req, res) => {
 //       include: [
 //         {
 //           model: Patient,
-//           attributes: ["name"],
+//           attributes: ["practice_name",  "street_address", "city", "state", "zip"],
 //         },
 //       ],
 //     });
