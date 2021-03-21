@@ -17,9 +17,16 @@ router.post("/", async (req, res) => {
     req.session.save(() => {
       req.session.patientId = patientData.id;
       req.session.email = patientData.email;
+      req.session.cellPhone = patientData.cellPhone;
+      req.session.name = patientData.name
       req.session.loggedIn = true;
 
-      res.json(patientData);
+      res.status(410).redirect('/')
+      // res.status(410).redirect('/myProfile')
+      res.json({patientData, message: "You have successfully signed up!" });
+      // return res.status(410).redirect('/myProfile')
+      // res.json(patientData)
+
     });
   } catch (err) {
     res.status(500).json(err);
@@ -76,6 +83,35 @@ router.post("/logout", (req, res) => {
     res.status(404).end();
   }
 });
+
+router.get('/:id', (req, res) => {
+  Patient.findOne({
+    where: {
+      id: req.session.patientId,
+    },
+      // include: [{ model: db.Patient }],
+      // attributes: {
+      //   include: [ "id", "email", "name", "cellPhone" ]
+      // }
+    })
+    .then(patientData => {
+      console.log(patientData)
+      if (!patientData) {
+        res.status(404).json({ message: 'No category found with that id!'});
+        return;
+    }
+    res.json(patientData);
+  })
+  .catch (err => {
+    console.log(err)
+    res.status(500).json(err);
+  });
+  
+});
+
+// router.get('/', (req, res) => {
+//   res.render('myProfile', { name: name }, { email: email }, { cellPhone: cellPhone });
+// })
 
 router.get('/signup', (req, res) => {
   console.log("/signup git")
