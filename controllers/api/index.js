@@ -6,7 +6,7 @@ const registerRoutes = require("./registerRoutes");
 
 // URL: /api/patient
 router.use("/patient", patientRoutes);
- 
+
 // URL: /api/location
 router.use("/location", locationRoutes);
 

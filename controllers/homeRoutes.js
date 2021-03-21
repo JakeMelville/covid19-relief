@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const path = require("path");
-const { Patient, Location } = require("../models");
-const withAuth = require("../utils/auth");
+// const { Patient, Location } = require("../models");
+// const withAuth = require("../utils/auth");
 
 router.get("/", (req, res) => {
   console.log("GET /");
@@ -27,7 +27,7 @@ router.get("/", (req, res) => {
 //       location.get({ plain: true })
 //     );
 
-//     res.render("covid", {
+//     res.render("/", {
 //       locations,
 //       loggedIn: req.session.loggedIn,
 //     });
@@ -85,4 +85,4 @@ router.get("/", (req, res) => {
 //   res.render("login");
 // });
 
-module.exports = router;
+// module.exports = router;

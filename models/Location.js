@@ -11,11 +11,11 @@ Location.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    practice_name: {
+    practiceName: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    street_address: {
+    streetAddress: {
       type: DataTypes.STRING,
       allowNull: false,
     },
