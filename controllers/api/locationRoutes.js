@@ -1,12 +1,12 @@
 const router = require("express").Router();
 const { Location, Patient, Register } = require("../../models");
-const withAuth = require('../../utils/auth');
+const withAuth = require("../../utils/auth");
 
 router.post("/", withAuth, async (req, res) => {
   try {
     const patientLocation = await Location.create({
       ...req.body,
-      patientId: req.session.patientId
+      patientId: req.session.patientId,
     });
 
     res.status(200).json(patientLocation);
@@ -37,7 +37,7 @@ router.delete("/:id", withAuth, async (req, res) => {
     const locationData = await Location.destroy({
       where: {
         id: req.params.id,
-        patientId: req.session.patientId
+        patientId: req.session.patientId,
       },
     });
 
@@ -53,5 +53,3 @@ router.delete("/:id", withAuth, async (req, res) => {
 });
 
 module.exports = router;
-
-

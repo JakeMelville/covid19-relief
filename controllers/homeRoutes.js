@@ -12,77 +12,77 @@ router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/myProfile.html"));
 });
 
-// router.get("/", async (req, res) => {
-//   try {
-//     const locationData = await Location.findAll({
-//       include: [
-//         {
-//           model: Patient,
-//           attributes: ["practice_name", "street_address", "city", "state", "zip"],
-//         },
-//       ],
-//     });
+router.get("/", async (req, res) => {
+  try {
+    const locationData = await Location.findAll({
+      include: [
+        {
+          model: Patient,
+          attributes: ["practice_name", "street_address", "city", "state", "zip"],
+        },
+      ],
+    });
 
-//     const locations = locationData.map((location) =>
-//       location.get({ plain: true })
-//     );
+    const locations = locationData.map((location) =>
+      location.get({ plain: true })
+    );
 
-//     res.render("covid", {
-//       locations,
-//       loggedIn: req.session.loggedIn,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    res.render("/", {
+      locations,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-// router.get("/location/:id", async (req, res) => {
-//   try {
-//     const locationData = await Location.findOne(req.params.id, {
-//       include: [
-//         {
-//           model: Patient,
-//           attributes: ["practice_name",  "street_address", "city", "state", "zip"],
-//         },
-//       ],
-//     });
+router.get("/location/:id", async (req, res) => {
+  try {
+    const locationData = await Location.findOne(req.params.id, {
+      include: [
+        {
+          model: Patient,
+          attributes: ["practice_name",  "street_address", "city", "state", "zip"],
+        },
+      ],
+    });
 
-//     const location = locationData.get({ plain: true });
+    const location = locationData.get({ plain: true });
 
-//     res.render("myProfile", {
-//       ...location,
-//       loggedIn: req.session.loggedIn,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    res.render("myProfile", {
+      ...location,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-// router.get("/myProfile", withAuth, async (req, res) => {
-//   try {
-//     const patientData = await Patient.findOne(req.session.userId, {
-//       attributes: { exclude: ["password"] },
-//       include: [{ model: Location }],
-//     });
+router.get("/myProfile", withAuth, async (req, res) => {
+  try {
+    const patientData = await Patient.findOne(req.session.userId, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Location }],
+    });
 
-//     const patient = patientData.get({ plain: true });
+    const patient = patientData.get({ plain: true });
 
-//     res.render("myProfile", {
-//       ...patient,
-//       loggedIn: true,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+    res.render("myProfile", {
+      ...patient,
+      loggedIn: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-// router.get("/login", (req, res) => {
-//   if (req.session.loggedIn) {
-//     res.redirect("/covid");
-//     return;
-//   }
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/covid");
+    return;
+  }
 
-//   res.render("login");
-// });
+  res.render("login");
+});
 
 module.exports = router;

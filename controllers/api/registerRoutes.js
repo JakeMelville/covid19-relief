@@ -5,14 +5,15 @@ const { Register } = require("../../models");
 // path = /api/register
 router.post("/", async (req, res) => {
   if (!req.session.name) {
-    res.status(410).redirect('/login'); //look up status
-  } 
+    res.status(410).redirect("/login"); //look up status
+  }
   try {
     //find location record from database
     const regData = await Register.create({
       ...req.body,
       patient_id: req.session.patientId,
       // location_id
+      location_id: req.session.locationId,
     });
     res.status(200).json(regData);
   } catch (err) {
@@ -23,8 +24,8 @@ router.post("/", async (req, res) => {
 // path = /api/register/1
 router.delete("/:id", async (req, res) => {
   if (!req.session.name) {
-    res.status(410).redirect('/login'); //look up status
-  } 
+    res.status(410).redirect("/login"); //look up status
+  }
   try {
     const regData = await Register.destroy({
       where: { id: req.params.id },
