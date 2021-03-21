@@ -66,15 +66,6 @@ iframe {
     
 }
 
-<<<<<<< HEAD
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-.location-results {
-    display:none;
-    list-style: none;
-=======
 nav a:hover {
     background-color: aquamarine;
     color:grey;
@@ -108,5 +99,4 @@ img {
 
 .resultLocations {
 text-align:left ;
->>>>>>> b45c513473ee5daa50aee6921ce7b876eccd4448
 }
