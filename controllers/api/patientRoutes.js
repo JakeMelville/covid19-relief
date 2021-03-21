@@ -89,7 +89,7 @@ router.get("/:id", (req, res) => {
     .then((patientData) => {
       console.log(patientData);
       if (!patientData) {
-        res.status(404).json({ message: "No category found with that id!" });
+        res.status(404).json({ message: "No user found with that id!" });
         return;
       }
       res.json(patientData);

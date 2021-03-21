@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Location, Patient, Register } = require("../../models");
-// const withAuth = require("../../utils/auth");
+const withAuth = require("../../utils/auth");
 
 // router.post("/", withAuth, async (req, res) => {
 //   try {
@@ -68,26 +68,72 @@ router.post("/", async (req, res) => {
 
     req.session.save(() => {
       req.session.locationId = locationData.id;
-      req.session.practiceName = patientData.practiceName;
-      req.session.streetAddress = patientData.streetAddress;
-      req.session.city = patientData.city;
-      req.session.state = patientData.state;
-      req.session.zip = patientData.zip;
+      req.session.practiceName = locationData.practiceName;
+      req.session.streetAddress = locationData.streetAddress;
+      req.session.city = locationData.city;
+      req.session.state = locationData.state;
+      req.session.zip = locationData.zip;
       req.session.loggedIn = true;
 
       res.status(410).redirect("/");
-      // res.status(410).redirect('/myProfile')
-      res.json({ locationData, message: "You have successfully signed up!" });
-      // return res.status(410).redirect('/myProfile')
-      // res.json(patientData)
+      // res.json(locationData)
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-router.get("/:id", (req, res) => {
-  Location.findOne({
+// URL: /api/patient/login
+router.post("/login", async (req, res) => {
+  console.log("POST /api/patient/login");
+  try {
+    const location = await Patient.findOne({
+      where: { email: req.body.email },
+    });
+    console.log("Location: ", location);
+
+    if (!location) {
+      res.status(404).json({ message: "Login failed, please try again" });
+      res.status(410).redirect("/login");
+      return;
+    }
+
+    // const validPassword = await patient.checkPassword(req.body.password);
+
+    // if (!validPassword) {
+    //   res.status(400).json({ message: "Login failed, please try again" });
+    //   return;
+    // }
+
+    req.session.save(() => {
+      req.session.locationId = location.id;
+      req.session.practiceName = location.practiceName;
+      req.session.streetAddress = location.streetAddress;
+      req.session.city = location.city;
+      req.session.state = location.state;
+      req.session.zip = location.zip;
+      req.session.loggedIn = true;
+
+      res.status(410).redirect("/");
+      res.json({ patient, message: "You are now logged in!" });
+    });
+  } catch (err) {
+    res.status(400).json({ message: "No user account found!" });
+  }
+});
+
+router.post("/logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+
+router.get("/location/:id", withAuth, (req, res) => {
+Location.findOne({
     where: {
       id: req.session.locationId,
     },
@@ -99,14 +145,14 @@ router.get("/:id", (req, res) => {
     .then((locationData) => {
       console.log(locationData);
       if (!locationData) {
-        res.status(404).json({ message: "No category found with that id!" });
+        res.status(404).json({ message: "No location found with that id!" });
         return;
       }
       res.json(locationData);
     })
     .catch((err) => {
       console.log(err);
-      res.status(500).json(err);
+      res.status(500).json(err)
     });
 });
 
