@@ -46,6 +46,7 @@ nav ul{
     padding: 2px;
     text-align: right;
     border-style: solid;
+    list-style: none;
 }
 
 nav a {
@@ -99,4 +100,8 @@ img {
 
 .resultLocations {
 text-align:left ;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 880dadd8f947a7b30eb56e37fbd5646922f30a61
