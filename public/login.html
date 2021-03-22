@@ -4,14 +4,15 @@
   <div class="card text-center">
     <div class="card-header">
       <h2>WELCOME BACK!</h2>
+      <img class="card-img-top w-50 h-50" src="https://www.cityofevanston.org/Home/ShowPublishedImage/13646/637316239106900000" alt="Card image cap">
     </div>
     <form id="login-form" class="card-body" method="post" action="/api/patient/login">
-      <div>
-        <label for="username-input-login">Username</label>
+      <div class="form-group">
+        <label for="username-input-login" class="font-weight-bold">Username</label>
         <input type="text" id="username-input-login" name="email" placeholder="EMAIL" />
       </div>
-      <div>
-        <label for="password-input-login" class="form-label">Password</label>
+      <div class="form-group">
+        <label for="password-input-login" class="form-label font-weight-bold">Password</label>
         <input type="password" id="password-input-login" name="password" placeholder="PASSWORD" />
       </div>
       <button type="submit" id="login-btn" class="btn">Login</button>
