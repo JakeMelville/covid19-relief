@@ -68,6 +68,10 @@ function showVaccine() {
   document.getElementById("vaccine-finder").classList.remove("invisible");
   document.getElementById("test-locations").classList.add("invisible");
 }
-
+function sendLocation() {
+  localStorage.setItem('location', document.getElementById("chosenLocation").value)
+  console.log(document.getElementById("chosenLocation").value)
+}
+document.getElementById("submitLocation").addEventListener('click', sendLocation)
 //function showElem() {
 //document.getElementById("myImg").style.visibility = "visible";
