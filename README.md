@@ -44,6 +44,6 @@ Build status of continus integration with Heroku is unsuccessful.
 
 ## Technologies
 
-HTML, CSS, Bootstrap, Javascrpit, Node, Sequelize, Bcrypt, MySQL
+HTML, CSS, Bootstrap, Javascript, Node, Sequelize, Bcrypt, MySQL
 
 
