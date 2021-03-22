@@ -5,20 +5,17 @@ const locationInput = document.getElementById("input"); //user input
 const mapUrl = "https://open.mapquestapi.com/staticmap/v5/map?key=";
 
 function locFinder(event) {
-  event.preventDefault();
-  document.getElementById("test-locations").removeAttribute("display");
-  const queryString =
-    apiUrl +
-    apiKey +
-    "&location=" +
-    locationInput.value.replace(/\s+/g, "").toLowerCase();
-  console.log(queryString);
-  fetch(queryString)
-    .then((res) => res.json())
-    .then((data) => {
-      // console.log(data)
-      console.log(data.results[0].locations[0].latLng.lat);
-      const locationLat = data.results[0].locations[0].latLng.lat;
+    event.preventDefault();
+    document.getElementById("formSight").setAttribute('display', "block");
+    document.getElementById("test-locations").removeAttribute('display');
+    const queryString = apiUrl + apiKey + '&location=' + locationInput.value.replace(/\s+/g, '').toLowerCase();
+    console.log(queryString)
+    fetch(queryString)
+        .then((res) => res.json())
+        .then((data) => {
+            // console.log(data)
+            console.log(data.results[0].locations[0].latLng.lat);
+            const locationLat = data.results[0].locations[0].latLng.lat;
 
       console.log(data.results[0].locations[0].latLng.lng);
       const locationLng = data.results[0].locations[0].latLng.lng;
