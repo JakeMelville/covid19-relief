@@ -12,7 +12,7 @@ User will be able to access a search that provides COVID-19 vaccines locations i
 
 ## DEMO
 
-![DEMO](public\images\DEMO.gif)
+![DEMO](public/images/DEMO.gif)
 
 
 ## Installation
