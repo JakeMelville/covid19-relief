@@ -1,4 +1,4 @@
-const patientData = async function (event) {
+const locationData = async function (event) {
     //     event.preventDefault();
   
     const practiceName = document.querySelector('h1[name="practiceName"]');
@@ -36,4 +36,4 @@ const patientData = async function (event) {
     //   console.log(patientData)
     // });
   };
-  patientData();
+  locationData();
