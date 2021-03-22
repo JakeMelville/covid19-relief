@@ -40,7 +40,7 @@ side with using routes
 
 ## Build Status
 
-Build status of continus integration with Heroku is unsuccessful.
+Build status of continous integration with Heroku is successful.
 
 ## Technologies
 
