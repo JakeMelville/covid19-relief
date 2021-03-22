@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const path = require("path");
-const { Patient, Location } = require("../models");
-const withAuth = require("../utils/auth");
+// const { Patient, Location } = require("../models");
+// const withAuth = require("../utils/auth");
 
 router.get("/", (req, res) => {
   console.log("GET /");
@@ -10,6 +10,10 @@ router.get("/", (req, res) => {
 
 router.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/myProfile.html"));
+});
+
+router.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/testingLocation.html"));
 });
 
 // router.get("/", async (req, res) => {
@@ -27,7 +31,7 @@ router.get("/", (req, res) => {
 //       location.get({ plain: true })
 //     );
 
-//     res.render("covid", {
+//     res.render("/", {
 //       locations,
 //       loggedIn: req.session.loggedIn,
 //     });
