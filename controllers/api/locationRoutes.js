@@ -1,48 +1,64 @@
 const router = require("express").Router();
 const { Location, Patient, Register } = require("../../models");
-const withAuth = require('../../utils/auth');
+const withAuth = require("../../utils/auth");
 
-router.post("/", withAuth, async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
-    const patientLocation = await Location.create({
+    const locationData = await Location.create({
       ...req.body,
-      patientId: req.session.patientId
+      patientId: req.session.patientId,
+      // locationId: req.session.locationId,
     });
 
-    res.status(200).json(patientLocation);
+    req.session.save(() => {
+      req.session.locationId = locationData.id;
+      req.session.practiceName = locationData.practiceName;
+    
+      console.log(locationData)
+    res.status(200).json(locationData);
+    });
+
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-// router.get("/:id", async (req, res) => {
-//   try {
-//     const locationData = await Location.findOne(req.params.id, {
-//       include: [{ model: Patient, through: Register, as: "location_patient" }],
-//     });
+router.get("/:id", (req, res) => {
+  Location.findOne({
+    where: {
+      id: req.session.patientId,
+    },
+    // include: [{ model: db.Patient }],
+    // attributes: {
+    //   include: [ "id", "email", "name", "cellPhone" ]
+    // }
+  })
+    .then((locationData) => {
+      console.log(locationData);
+      if (!locationData) {
+        res.status(404).json({ message: "No location found with that id!" });
+        return;
+      }
+      res.json(locationData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
-//     if (!locationData) {
-//       res.status(404).json({ message: "No location found with this id!" });
-//       return;
-//     }
-
-//     res.status(200).json(locationData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
-
-router.delete("/:id", withAuth, async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
   try {
     const locationData = await Location.destroy({
       where: {
-        id: req.params.id,
-        patientId: req.session.patientId
+        id: req.params.patientId,
+        locationId: req.params.locationId
+        // user_id: req.session.user_id,
       },
     });
 
     if (!locationData) {
-      res.status(404).json({ message: "No location found with this id!" });
+      res.status(404).json({ message: 'No location found with this id!' });
       return;
     }
 
@@ -53,5 +69,3 @@ router.delete("/:id", withAuth, async (req, res) => {
 });
 
 module.exports = router;
-
-
