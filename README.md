@@ -1,4 +1,15 @@
-# covid19-relief
+# COVID-19 Relief
+
+# Description
+
+Create an application to provide resoures for users seeking information about COVID-19 related issues.
+User will be about to go to CDC COVID-19 homepage for the latest updates and statistics reagarding the nation's COVID-19 status.
+User will be to search for testing loations in his/her requested area.
+User will be able to access a search that provides COVID-19 vaccines locations in his/her requested area.
+
+
+
+
 
 
 <!-- Dev Side -->
