@@ -32,3 +32,6 @@ const patientData = async function (event) {
   // });
 };
 patientData();
+
+const testSight = localStorage.getItem('location');
+document.getElementById("testLoc").textContent = testSight

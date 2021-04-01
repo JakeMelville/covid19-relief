@@ -12,7 +12,7 @@ User will be able to access a search that provides COVID-19 vaccines locations i
 
 ## DEMO
 
-![DEMO](public\images\DEMO.gif)
+![DEMO](public/images/DEMO.gif)
 
 
 ## Installation
@@ -40,10 +40,10 @@ side with using routes
 
 ## Build Status
 
-Build status of continus integration with Heroku is successful.
+Build status of continous integration with Heroku is successful.
 
 ## Technologies
 
-HTML, CSS, Bootstrap, Javascrpit, Node, Sequelize, Bcrypt, MySQL
+HTML, CSS, Bootstrap, Javascript, Node, Sequelize, Bcrypt, MySQL
 
 
