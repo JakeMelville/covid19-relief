@@ -14,6 +14,10 @@ User will be able to access a search that provides COVID-19 vaccines locations i
 
 ![DEMO](public/images/DEMO.gif)
 
+## Screenshot 
+<img width="1319" alt="Screen Shot 2021-04-15 at 11 32 28 PM" src="https://user-images.githubusercontent.com/77857718/114967654-d98f2800-9e42-11eb-94bd-df858bdc3742.png">
+
+
 
 ## Installation
 
